@@ -100,7 +100,7 @@ export default function Home() {
           </div>
         </div>
       </section>        {/* Beautiful Featured Solutions Grid */}
-        <section id="solutions" className="section-pad relative overflow-hidden">
+        <section id="solutions" className="section-pad relative overflow-hidden bg-[#051012]">
           {/* Subtle background glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1fa0f9]/5 rounded-full blur-[120px] pointer-events-none" />
           
@@ -115,68 +115,87 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-12 gap-6">
+            {/* Vertical Accordion Hover Grid */}
+            <div className="flex flex-col md:flex-row h-auto md:h-[600px] gap-4">
               
               {/* Card 1: Solar */}
-              <a href="/services" className="group relative h-[450px] lg:col-span-7 rounded-3xl overflow-hidden shadow-2xl block">
+              <a href="/services" className="group relative w-full md:flex-1 md:hover:flex-[3] h-[350px] md:h-full rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out border border-white/10 shadow-2xl block">
                 <Image src={images.solar} alt="Solar Systems" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/30 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012]/90 via-[#051012]/40 to-transparent opacity-100 group-hover:opacity-80 transition-opacity duration-700" />
                 
-                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
-                  <div className="flex justify-between items-start md:items-center gap-4">
-                    <div>
-                      <div className="text-lime-400 text-xs font-bold tracking-widest uppercase mb-2">01 / Generation</div>
-                      <h3 className="text-3xl font-serif italic text-white mb-2">Solar Systems</h3>
-                      <p className="text-[#8ca3a3] text-sm max-w-sm h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Capture the sun\'s energy with premium tier-1 panels designed for maximum Victorian efficiency.</p>
-                    </div>
-                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-lime-400 text-[#051012] flex items-center justify-center transform md:-rotate-45 group-hover:rotate-0 transition-all duration-700 shadow-[0_0_30px_rgba(163,230,53,0.3)]">
                       <ArrowRight size={20} />
+                    </div>
+                    <div className="text-lime-400 text-xs font-bold tracking-widest uppercase md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">01 / Generation</div>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-serif italic text-white mb-0 whitespace-nowrap drop-shadow-lg">Solar Systems</h3>
+                  
+                  <div className="overflow-hidden md:grid md:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
+                    <div className="min-h-0">
+                      <p className="text-[#8ca3a3] text-sm max-w-sm mt-4 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 md:delay-200">
+                        Capture the sun's energy with premium tier-1 panels designed for maximum Victorian efficiency.
+                      </p>
                     </div>
                   </div>
                 </div>
               </a>
               
               {/* Card 2: Lighting */}
-              <a href="/services" className="group relative h-[450px] lg:col-span-5 rounded-3xl overflow-hidden shadow-2xl block">
+              <a href="/services" className="group relative w-full md:flex-1 md:hover:flex-[3] h-[350px] md:h-full rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out border border-white/10 shadow-2xl block">
                 <Image src={images.interior} alt="Smart Lighting" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/30 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012]/90 via-[#051012]/40 to-transparent opacity-100 group-hover:opacity-80 transition-opacity duration-700" />
                 
-                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
-                  <div className="flex justify-between items-start md:items-center gap-4">
-                    <div>
-                      <div className="text-[#1fa0f9] text-xs font-bold tracking-widest uppercase mb-2">02 / Efficiency</div>
-                      <h3 className="text-3xl font-serif italic text-white mb-2">Smart Lighting</h3>
-                      <p className="text-[#8ca3a3] text-sm max-w-sm h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Transform spaces with intelligent, energy-saving LED solutions that instantly lower bills.</p>
-                    </div>
-                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-[#1fa0f9] text-white flex items-center justify-center transform md:-rotate-45 group-hover:rotate-0 transition-all duration-700 shadow-[0_0_30px_rgba(31,160,249,0.3)]">
                       <ArrowRight size={20} />
+                    </div>
+                    <div className="text-[#1fa0f9] text-xs font-bold tracking-widest uppercase md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">02 / Efficiency</div>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-serif italic text-white mb-0 whitespace-nowrap drop-shadow-lg">Smart Lighting</h3>
+                  
+                  <div className="overflow-hidden md:grid md:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
+                    <div className="min-h-0">
+                      <p className="text-white/70 text-sm max-w-sm mt-4 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 md:delay-200">
+                        Transform spaces with intelligent, energy-saving LED solutions that instantly lower bills.
+                      </p>
                     </div>
                   </div>
                 </div>
               </a>
               
               {/* Card 3: HVAC */}
-              <a href="/services" className="group relative h-[350px] lg:col-span-12 rounded-3xl overflow-hidden shadow-2xl block">
+              <a href="/services" className="group relative w-full md:flex-1 md:hover:flex-[3] h-[350px] md:h-full rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out border border-white/10 shadow-2xl block">
                 <Image src={images.technician} alt="HVAC Upgrades" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/20 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012]/90 via-[#051012]/40 to-transparent opacity-100 group-hover:opacity-80 transition-opacity duration-700" />
                 
-                <div className="absolute bottom-6 left-6 md:w-1/2 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
-                  <div className="flex justify-between items-start md:items-center gap-4">
-                    <div>
-                      <div className="text-white text-xs font-bold tracking-widest uppercase mb-2">03 / Climate</div>
-                      <h3 className="text-3xl font-serif italic text-white mb-2">HVAC Upgrades</h3>
-                      <p className="text-[#8ca3a3] text-sm max-w-md h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Engineered comfort. Upgrade to modern, high-efficiency climate control systems supported by VEU rebates.</p>
-                    </div>
-                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform md:-rotate-45 group-hover:rotate-0 transition-all duration-700 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
                       <ArrowRight size={20} />
+                    </div>
+                    <div className="text-white text-xs font-bold tracking-widest uppercase md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">03 / Climate</div>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-serif italic text-white mb-0 whitespace-nowrap drop-shadow-lg">HVAC Upgrades</h3>
+                  
+                  <div className="overflow-hidden md:grid md:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-700 ease-in-out">
+                    <div className="min-h-0">
+                      <p className="text-white/70 text-sm max-w-sm mt-4 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 md:delay-200">
+                        Engineered comfort. Upgrade to modern, high-efficiency climate control systems supported by VEU rebates.
+                      </p>
                     </div>
                   </div>
                 </div>
               </a>
-              
+  
             </div>
             
-            <div className="mt-12 text-center">
+            <div className="mt-16 flex justify-center">
               <ArrowButton href="/services">View all services</ArrowButton>
             </div>
           </div>
@@ -223,17 +242,18 @@ export default function Home() {
           </video>
           
           {/* Gradient Overlay for text readability */}
+          <div className="absolute inset-0 bg-[#051012]/70 md:bg-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#051012]/95 via-[#051012]/60 to-transparent w-full md:w-[65%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-transparent to-[#051012]" />
   
           <div className="page-shell relative z-10 w-full">
             <div className="max-w-2xl">
               <SectionLabel light>Who we are</SectionLabel>
-              <h2 className="text-5xl md:text-7xl font-bold mt-4 mb-6 tracking-tight text-[#f0f6f6]">Your partners in <br/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">efficiency.</em></h2>
+              <h2 className="text-4xl md:text-7xl font-bold mt-4 mb-6 tracking-tight text-[#f0f6f6] pr-4 md:pr-0">Your partners in <br className="hidden md:block"/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">efficiency.</em></h2>
               
-              <p className="text-[#8ca3a3] mb-6 text-xl leading-relaxed font-medium">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
+              <p className="text-[#8ca3a3] mb-6 text-lg md:text-xl leading-relaxed font-medium">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
               
-              <p className="text-[#8ca3a3] mb-10 text-lg leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
+              <p className="text-[#8ca3a3] mb-10 text-base md:text-lg leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
               
               <div className="flex flex-wrap items-center gap-8">
                 <ArrowButton light href="/about">Discover our story</ArrowButton>
