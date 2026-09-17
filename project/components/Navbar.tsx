@@ -18,7 +18,6 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="scroll-progress" />
       <nav className={`site-nav ${scrolled ? 'nav-scrolled' : ''}`} aria-label="Main navigation">
         <Link href="/" className="brand-mark" aria-label="Skyenergy Groups home">
           <Image src="/images/sky-logo-Q48KBUb3butXN7eD-removebg-preview.png" alt="Skyenergy Groups" width={184} height={64} priority />

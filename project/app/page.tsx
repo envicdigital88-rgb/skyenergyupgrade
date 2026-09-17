@@ -64,15 +64,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Banner */}
-      <section className="border-b border-gray-200 bg-white py-10">
-        <div className="page-shell flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-          <div className="flex flex-wrap justify-center gap-12 md:gap-24 font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">
-            <span>VEU Victoria</span>
-            <span>Clean Energy Council</span>
-            <span>EnergySafe</span>
-            <span>Master Electricians</span>
+      {/* Trust Banner (Marquee) */}
+      <section className="border-b border-gray-200 bg-white py-10 overflow-hidden relative">
+        {/* Gradients for smooth fade out at edges */}
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        
+        <div className="flex w-full opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex items-center gap-16 md:gap-24 whitespace-nowrap animate-marquee px-8 shrink-0">
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">VEU Victoria</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Clean Energy Council</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">EnergySafe</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Master Electricians</span>
+          </div>
+          {/* Duplicate for seamless loop */}
+          <div className="flex items-center gap-16 md:gap-24 whitespace-nowrap animate-marquee px-8 shrink-0" aria-hidden="true">
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">VEU Victoria</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Clean Energy Council</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">EnergySafe</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Master Electricians</span>
           </div>
         </div>
       </section>
@@ -148,6 +166,82 @@ export default function Home() {
               <Award size={40} className="text-white mb-6" />
               <h3 className="text-2xl font-bold mb-4">Premium Quality</h3>
               <p className="text-gray-400 text-sm leading-relaxed">We exclusively source tier-1 components that are built to withstand harsh Australian conditions for decades.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Snippet */}
+      <section className="section-pad bg-white">
+        <div className="page-shell">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
+              <Image src={images.home} alt="About Skyenergy" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur px-8 py-6 rounded-2xl shadow-xl max-w-sm border border-white/20">
+                <span className="flex items-center gap-3 text-sky-600 font-bold tracking-widest uppercase text-xs mb-2">
+                  <span className="w-2 h-2 rounded-full bg-lime-400" /> Founded in Victoria
+                </span>
+                <p className="text-gray-800 font-semibold">Over a decade of engineering smarter, greener spaces for Australian families and businesses.</p>
+              </div>
+            </div>
+            <div>
+              <SectionLabel>Who we are</SectionLabel>
+              <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">Your partners in <span className="text-sky-600">efficiency.</span></h2>
+              <p className="text-gray-600 mb-6 text-lg leading-relaxed">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
+              <p className="text-gray-500 mb-10 leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
+              <div className="flex items-center gap-6">
+                <ArrowButton href="/about">Discover our story</ArrowButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-pad bg-[#0b1719] text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+        <div className="page-shell relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <SectionLabel light>Client Success</SectionLabel>
+            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">Don't just take our <span className="text-lime-400">word for it.</span></h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+              <div className="flex text-lime-400 mb-6"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">"The entire process was seamless. The team handled all the VEU paperwork, and our new smart lighting system reduced our warehouse energy bill by 40% in the first quarter."</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">SJ</div>
+                <div>
+                  <div className="font-bold">Sarah Jenkins</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wider">Logistics Manager</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-b from-sky-900/40 to-white/5 border border-sky-500/20 p-8 rounded-3xl transform md:-translate-y-4 hover:border-sky-500/40 transition-colors relative">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-lime-400/20 blur-2xl rounded-full" />
+              <div className="flex text-lime-400 mb-6 relative"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
+              <p className="text-lg text-white font-medium mb-8 leading-relaxed relative">"Skyenergy Groups completely transformed our home. The solar installation was incredibly neat, and their engineers took the time to explain exactly how to maximize our savings."</p>
+              <div className="flex items-center gap-4 relative">
+                <div className="w-12 h-12 rounded-full bg-lime-900 flex items-center justify-center font-bold text-lime-200">MT</div>
+                <div>
+                  <div className="font-bold">Mark Thompson</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wider">Homeowner, VIC</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+              <div className="flex text-lime-400 mb-6"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">"We were hesitant about the initial costs, but the ROI projection Skyenergy provided was spot on. The HVAC upgrade paid for itself through government rebates and monthly savings."</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">EL</div>
+                <div>
+                  <div className="font-bold">Elena Rodriguez</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wider">Retail Owner</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
