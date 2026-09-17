@@ -12,7 +12,18 @@ export const images = {
   team: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1200',
   blueprint: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1200',
   tools: 'https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  energy: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1200'
+  energy: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  custom1: '/images/custom-img-1.avif',
+  custom2: '/images/custom-img-2.avif',
+  custom3: '/images/custom-img-3.avif',
+  custom4: '/images/custom-img-4.avif',
+  custom5: '/images/custom-img-5.avif',
+  custom6: '/images/custom-img-6.avif',
+  custom7: '/images/custom-img-7.avif',
+  custom8: '/images/custom-img-8.avif',
+  custom9: '/images/custom-img-9.avif',
+  custom10: '/images/custom-img-10.avif',
+  custom11: '/images/custom-img-11.avif'
 };
 
 export type Service = {

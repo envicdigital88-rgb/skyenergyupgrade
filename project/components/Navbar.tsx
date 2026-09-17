@@ -29,11 +29,13 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-3">
-          <Link href="/contact" className="nav-cta hidden sm:inline-flex">
-            Check your eligibility <ArrowUpRight size={15} />
+        <div className="flex items-center gap-2 md:gap-3">
+          <Link href="/contact" className="nav-cta text-center leading-tight">
+            <span className="hidden sm:inline">Check your eligibility</span>
+            <span className="sm:hidden">Check your<br/>eligibility</span>
+            <ArrowUpRight size={14} className="hidden sm:block" />
           </Link>
-          <button className="menu-button lg:hidden" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'}>
+          <button className="menu-button lg:hidden shrink-0" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'}>
             {mobileOpen ? <X /> : <Menu />}
           </button>
         </div>

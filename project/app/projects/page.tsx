@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Quote, Sun } from 'lucide-react';
-import { SectionLabel, ProjectCard } from '@/components/Shared';
+import { SectionLabel, ProjectCard, SubpageHero } from '@/components/Shared';
 import { images } from '@/lib/data';
 
 export default function ProjectsPage() {
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
+    <main className="overflow-hidden">
+      <SubpageHero title="Our recent work &" highlight="featured installations." subtitle="See how we are transforming homes across Victoria into highly efficient, sustainable living spaces." image={images.installation} />
       <section id="projects" className="projects-section section-pad">
         <div className="page-shell">
           <div className="section-intro-row">
@@ -41,7 +42,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-[#051012]">
         <div className="page-shell">
           <SectionLabel>Featured Case Study</SectionLabel>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-12 tracking-tight">The Greenfield <span className="text-sky-600">Transformation.</span></h2>

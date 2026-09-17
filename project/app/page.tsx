@@ -21,24 +21,30 @@ export default function Home() {
   const [eligibility, setEligibility] = useState({ location: '', type: '', upgrade: '' });
 
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719]">
+    <main className="overflow-hidden">
       {/* Enhanced Hero Section */}
-      <section id="top" className="hero-section">
-        <Image src={images.hero} alt="Modern home with solar panels in warm evening light" fill priority sizes="100vw" className="hero-image" />
-        <div className="hero-overlay" />
+      <section id="top" className="hero-section relative">
+        <video 
+          src="/images/hero-video-2.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="hero-image absolute inset-0 w-full h-full"
+        />
+        <div className="hero-overlay absolute inset-0" />
         <div className="hero-grid" />
         <div className="hero-content page-shell">
           <div className="max-w-4xl relative z-10">
-            <div className="eyebrow light-eyebrow inline-flex items-center bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8"><span className="pulse-dot mr-3" /> Australia's Premier Energy Upgrade Specialists</div>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">Energy upgrades<br /><em className="text-lime-400 not-italic">made brilliant.</em></h1>
-            <p className="hero-copy text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">Transform your property with state-of-the-art energy efficiency. We navigate the VEU program to bring you premium solutions that lower bills and elevate comfort.</p>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-5 leading-[1.1] drop-shadow-2xl">Elevate your energy.<br /><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">Brilliantly designed.</em></h1>
+            <p className="hero-copy text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed drop-shadow-md font-medium">Experience a curated approach to energy efficiency. We seamlessly integrate premium VEU solutions to lower bills and elevate your living space.</p>
             <div className="flex flex-wrap items-center gap-6">
               <ArrowButton light href="/contact">Start your upgrade</ArrowButton>
               <a href="/services" className="text-link-light text-white hover:text-lime-400 transition-colors">Explore our solutions <ArrowRight size={17} /></a>
             </div>
           </div>
           
-          <div className="hero-bottom mt-20">
+          <div className="hero-bottom mt-10">
             <div className="flex items-center gap-8">
               <div className="text-white/60">
                 <div className="text-3xl font-bold text-white mb-1">10k+</div>
@@ -65,45 +71,45 @@ export default function Home() {
       </section>
 
       {/* Trust Banner (Marquee) */}
-      <section className="border-b border-gray-200 bg-white py-10 overflow-hidden relative">
+      <section className="border-b border-[#1e3639] bg-[#051012] py-10 overflow-hidden relative">
         {/* Gradients for smooth fade out at edges */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--paper)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--paper)] to-transparent z-10 pointer-events-none" />
         
-        <div className="flex w-full opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="flex w-full opacity-60 hover:opacity-100 transition-all duration-500">
           <div className="flex items-center gap-16 md:gap-24 whitespace-nowrap animate-marquee px-8 shrink-0">
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">VEU Victoria</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Clean Energy Council</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">EnergySafe</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Master Electricians</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">VEU Victoria</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">Clean Energy Council</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">EnergySafe</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">Master Electricians</span>
           </div>
           {/* Duplicate for seamless loop */}
           <div className="flex items-center gap-16 md:gap-24 whitespace-nowrap animate-marquee px-8 shrink-0" aria-hidden="true">
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">VEU Victoria</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Clean Energy Council</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">EnergySafe</span>
-            <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Accredited by</span>
-            <span className="font-bold text-xl md:text-2xl text-gray-600 tracking-tighter">Master Electricians</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">VEU Victoria</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">Clean Energy Council</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">EnergySafe</span>
+            <span className="text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">Accredited by</span>
+            <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">Master Electricians</span>
           </div>
         </div>
       </section>
 
       {/* Beautiful Featured Solutions Grid */}
-      <section id="solutions" className="section-pad bg-[#f7f9f8]">
+      <section id="solutions" className="section-pad">
         <div className="page-shell">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <SectionLabel>Core Solutions</SectionLabel>
               <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight">Powering a <span className="text-sky-600">smarter future.</span></h2>
             </div>
-            <p className="text-gray-600 max-w-sm text-sm leading-relaxed">Discover our most popular energy upgrade pathways designed specifically for the Victorian climate and VEU requirements.</p>
+            <p className="text-[#8ca3a3] max-w-sm text-sm leading-relaxed">Discover our most popular energy upgrade pathways designed specifically for the Victorian climate and VEU requirements.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -145,27 +151,27 @@ export default function Home() {
       </section>
 
       {/* Value Strip */}
-      <section className="bg-[#0b1719] text-white py-24">
+      <section className="bg-[#051012] text-white py-24">
         <div className="page-shell">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-6">The Skyenergy Advantage</h2>
-            <p className="text-gray-400">We do more than install equipment; we engineer long-term energy resilience.</p>
+            <p className="text-[#8ca3a3]">We do more than install equipment; we engineer long-term energy resilience.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
             <div>
               <ShieldCheck size={40} className="text-lime-400 mb-6" />
               <h3 className="text-2xl font-bold mb-4">Certified Experts</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">Our technicians are rigorously trained and certified to meet the highest safety and performance standards in Victoria.</p>
+              <p className="text-[#8ca3a3] text-sm leading-relaxed">Our technicians are rigorously trained and certified to meet the highest safety and performance standards in Victoria.</p>
             </div>
             <div>
               <TrendingDown size={40} className="text-sky-400 mb-6" />
               <h3 className="text-2xl font-bold mb-4">Maximum ROI</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">We specialize in finding the perfect intersection of VEU rebates and energy savings to ensure your investment pays off rapidly.</p>
+              <p className="text-[#8ca3a3] text-sm leading-relaxed">We specialize in finding the perfect intersection of VEU rebates and energy savings to ensure your investment pays off rapidly.</p>
             </div>
             <div>
               <Award size={40} className="text-white mb-6" />
               <h3 className="text-2xl font-bold mb-4">Premium Quality</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">We exclusively source tier-1 components that are built to withstand harsh Australian conditions for decades.</p>
+              <p className="text-[#8ca3a3] text-sm leading-relaxed">We exclusively source tier-1 components that are built to withstand harsh Australian conditions for decades.</p>
             </div>
           </div>
         </div>
@@ -187,8 +193,8 @@ export default function Home() {
             <div>
               <SectionLabel>Who we are</SectionLabel>
               <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">Your partners in <span className="text-sky-600">efficiency.</span></h2>
-              <p className="text-gray-600 mb-6 text-lg leading-relaxed">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
-              <p className="text-gray-500 mb-10 leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
+              <p className="text-[#8ca3a3] mb-6 text-lg leading-relaxed">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
+              <p className="text-[#8ca3a3] mb-10 leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
               <div className="flex items-center gap-6">
                 <ArrowButton href="/about">Discover our story</ArrowButton>
               </div>
@@ -198,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-pad bg-[#0b1719] text-white relative overflow-hidden">
+      <section className="section-pad bg-[#051012] text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
         <div className="page-shell relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -214,7 +220,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">SJ</div>
                 <div>
                   <div className="font-bold">Sarah Jenkins</div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wider">Logistics Manager</div>
+                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Logistics Manager</div>
                 </div>
               </div>
             </div>
@@ -227,7 +233,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-lime-900 flex items-center justify-center font-bold text-lime-200">MT</div>
                 <div>
                   <div className="font-bold">Mark Thompson</div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wider">Homeowner, VIC</div>
+                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Homeowner, VIC</div>
                 </div>
               </div>
             </div>
@@ -239,7 +245,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">EL</div>
                 <div>
                   <div className="font-bold">Elena Rodriguez</div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wider">Retail Owner</div>
+                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Retail Owner</div>
                 </div>
               </div>
             </div>
@@ -247,41 +253,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Gallery */}
+      <section className="py-24 bg-[#051012] border-y border-[#1e3639]">
+        <div className="page-shell">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <SectionLabel>Inspiration</SectionLabel>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 tracking-tight text-[#f0f6f6]">Curated <span className="text-[#1fa0f9]">spaces.</span></h2>
+            </div>
+            <a href="/projects" className="text-link hover:text-white transition-colors flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">
+              View all projects <ArrowRight size={17} />
+            </a>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="col-span-2 md:col-span-2 row-span-2 relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom1} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+            <div className="relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom2} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom3} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="col-span-2 relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom4} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6">
+             <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom5} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom6} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
+              <Image src={images.custom7} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive Eligibility Checker */}
       <section className="eligibility-section section-pad relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-sky-100/50 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10" />
-        <div className="page-shell eligibility-card border border-gray-100 rounded-[40px]">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-[#1fa0f9]/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10" />
+        <div className="page-shell eligibility-card border border-[#1e3639] rounded-[40px]">
           <div className="eligibility-copy pr-10">
             <SectionLabel>Instant Quote</SectionLabel>
             <h2 className="text-5xl md:text-6xl font-bold mt-6 mb-6">Check your <span className="text-lime-600">eligibility.</span></h2>
-            <p className="text-gray-600 mb-10 text-lg">See if your property qualifies for thousands of dollars in VEU government rebates. It takes less than 60 seconds.</p>
-            <div className="eligibility-mark bg-gray-50 inline-flex px-6 py-3 rounded-full border border-gray-200">
-              <span className="font-bold text-gray-700">VEU</span>
-              <span className="mark-line mx-4 bg-gray-300 w-12" />
-              <span className="font-bold text-gray-700">VICTORIA</span>
+            <p className="text-[#8ca3a3] mb-10 text-lg">See if your property qualifies for thousands of dollars in VEU government rebates. It takes less than 60 seconds.</p>
+            <div className="eligibility-mark bg-[#051012] inline-flex px-6 py-3 rounded-full border border-[#1e3639]">
+              <span className="font-bold text-[#f0f6f6]">VEU</span>
+              <span className="mark-line mx-4 bg-[#1e3639] w-12" />
+              <span className="font-bold text-[#f0f6f6]">VICTORIA</span>
             </div>
           </div>
-          <div className="eligibility-form bg-white p-8 rounded-3xl shadow-xl border border-gray-50">
+          <div className="eligibility-form bg-[#081618] p-8 rounded-3xl shadow-xl border border-[#1e3639]">
             <div className="question-block">
-              <label className="text-xs font-bold text-gray-400 tracking-wider">Are you located in Victoria?</label>
+              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">Are you located in Victoria?</label>
               <div className="choice-row">
                 {['Yes', 'No'].map(value => (
-                  <button key={value} className={`flex-1 py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.location === value ? 'bg-[#0b1719] text-white border-[#0b1719] shadow-lg scale-[1.02]' : 'border-gray-200 text-gray-500 hover:border-gray-300'}`} onClick={() => setEligibility({ ...eligibility, location: value })}>{value}</button>
+                  <button key={value} className={`flex-1 py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.location === value ? 'bg-[#1fa0f9] text-[#051012] border-[#1fa0f9] shadow-lg scale-[1.02]' : 'border-[#1e3639] text-[#8ca3a3] hover:border-white/20 hover:text-white bg-[#051012]'}`} onClick={() => setEligibility({ ...eligibility, location: value })}>{value}</button>
                 ))}
               </div>
             </div>
             <div className="question-block">
-              <label className="text-xs font-bold text-gray-400 tracking-wider">What best describes you?</label>
+              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">What best describes you?</label>
               <div className="choice-row choice-wrap grid grid-cols-2 gap-3">
                 {['Homeowner', 'Tenant', 'Small business', 'Commercial'].map(value => (
-                  <button key={value} className={`py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.type === value ? 'bg-[#0b1719] text-white border-[#0b1719] shadow-lg scale-[1.02]' : 'border-gray-200 text-gray-500 hover:border-gray-300'}`} onClick={() => setEligibility({ ...eligibility, type: value })}>{value}</button>
+                  <button key={value} className={`py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.type === value ? 'bg-[#1fa0f9] text-[#051012] border-[#1fa0f9] shadow-lg scale-[1.02]' : 'border-[#1e3639] text-[#8ca3a3] hover:border-white/20 hover:text-white bg-[#051012]'}`} onClick={() => setEligibility({ ...eligibility, type: value })}>{value}</button>
                 ))}
               </div>
             </div>
             <div className="question-block">
-              <label className="text-xs font-bold text-gray-400 tracking-wider">What are you interested in?</label>
+              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">What are you interested in?</label>
               <div className="select-wrap relative">
-                <select className="w-full py-4 px-5 bg-gray-50 border border-gray-200 rounded-xl font-semibold text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500" value={eligibility.upgrade} onChange={e => setEligibility({ ...eligibility, upgrade: e.target.value })}>
+                <select className="w-full py-4 px-5 bg-[#051012] border border-[#1e3639] rounded-xl font-semibold text-[#f0f6f6] appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500" value={eligibility.upgrade} onChange={e => setEligibility({ ...eligibility, upgrade: e.target.value })}>
                   <option value="">Select an upgrade area</option>
                   <option>Lighting</option>
                   <option>Heating & Cooling</option>
@@ -289,10 +337,10 @@ export default function Home() {
                   <option>Energy Audit</option>
                   <option>Not sure yet</option>
                 </select>
-                <ChevronDown size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                <ChevronDown size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#8ca3a3] pointer-events-none" />
               </div>
             </div>
-            <button className="w-full mt-4 py-5 bg-lime-400 hover:bg-lime-500 text-[#0b1719] font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            <button className="w-full mt-4 py-5 bg-lime-400 hover:bg-lime-500 text-[#051012] font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
               Calculate Rebates <ArrowRight size={16} />
             </button>
           </div>

@@ -1,17 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Mail } from 'lucide-react';
 import { navItems } from '@/lib/data';
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <div className="relative overflow-hidden w-full">
+      {/* Background elements for the glass effect to blur */}
+      <div className="absolute bottom-0 left-1/4 w-[800px] h-[400px] bg-[#1fa0f9]/20 rounded-full blur-[100px] -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[300px] bg-lime-400/10 rounded-full blur-[80px] -z-10" />
+      
+      <footer className="site-footer">
       <div className="page-shell">
         <div className="footer-top">
           <div>
-            <div className="footer-logo">
-              <span>SKY</span>
-              <small>ENERGY GROUPS</small>
-            </div>
+            <Link href="/" className="brand-mark">
+              <Image src="/images/sky-logo-Q48KBUb3butXN7eD-removebg-preview.png" alt="Skyenergy Groups" width={184} height={64} className="opacity-90" />
+            </Link>
             <p>
               Energy upgrades
               <br />
@@ -49,5 +54,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </div>
   );
 }

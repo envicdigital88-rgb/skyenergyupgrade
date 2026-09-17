@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Minus, ArrowRight } from 'lucide-react';
-import { SectionLabel, ArrowButton, PlusIcon } from '@/components/Shared';
+import { SectionLabel, ArrowButton, PlusIcon, SubpageHero } from '@/components/Shared';
 import { faqs, images } from '@/lib/data';
 
 export default function FAQPage() {
@@ -16,7 +16,8 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
+    <main className="overflow-hidden">
+      <SubpageHero title="Answers &" highlight="expert guidance." subtitle="Find answers to common questions about our energy efficiency solutions and the VEU rebate program." image={images.office} />
       <section id="veu" className="veu-section section-pad">
         <div className="page-shell veu-grid">
           <div>
@@ -61,7 +62,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-[#0b1719] text-white">
+      <section className="section-pad bg-[#051012] text-[#f0f6f6]">
         <div className="page-shell">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -70,11 +71,11 @@ export default function FAQPage() {
               <p className="text-gray-400 mb-8 leading-relaxed">Energy upgrades can be complex, and we want you to feel completely confident in your decisions. Our support team is ready to provide detailed technical answers and guide you through the available rebates.</p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="border border-white/10 rounded-xl p-6 bg-white/5">
+                <div className="border border-white/10 rounded-xl p-6 bg-[#051012]/5">
                   <h4 className="font-bold text-lime-400 mb-2">Technical</h4>
                   <p className="text-sm text-gray-400">Speak directly with our engineers about compatibility and integration.</p>
                 </div>
-                <div className="border border-white/10 rounded-xl p-6 bg-white/5">
+                <div className="border border-white/10 rounded-xl p-6 bg-[#051012]/5">
                   <h4 className="font-bold text-sky-400 mb-2">Financial</h4>
                   <p className="text-sm text-gray-400">Get clarity on VEU rebates, ROI calculations, and financing options.</p>
                 </div>

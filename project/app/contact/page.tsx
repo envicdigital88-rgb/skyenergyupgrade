@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState, FormEvent } from 'react';
 import { ArrowRight, ArrowUpRight, Check, CloudSun, Mail, Phone } from 'lucide-react';
-import { SectionLabel, ArrowButton } from '@/components/Shared';
+import { SectionLabel, ArrowButton, SubpageHero } from '@/components/Shared';
 import { images, services } from '@/lib/data';
 
 export default function ContactPage() {
@@ -15,20 +15,8 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
-      <section className="final-cta">
-        <Image src={images.sunset} alt="A sustainable home in the late afternoon sun" fill sizes="100vw" className="final-cta-image" />
-        <div className="final-cta-overlay" />
-        <div className="page-shell final-cta-content">
-          <SectionLabel light>Ready when you are</SectionLabel>
-          <h2>Ready to upgrade<br /><span>your energy?</span></h2>
-          <p>Let&apos;s make your energy upgrade simpler, smarter and more efficient.</p>
-          <div className="flex flex-wrap gap-4">
-            <ArrowButton light href="#contact">Get started</ArrowButton>
-            <a href="#contact" className="text-link-light">Contact us <ArrowRight size={17} /></a>
-          </div>
-        </div>
-      </section>
+    <main className="overflow-hidden">
+      <SubpageHero title="Ready to upgrade &" highlight="elevate your energy?" subtitle="Get in touch to discover how our premium, sustainable energy solutions can transform your home or business." image={images.sunset} />
 
       <section id="contact" className="contact-section section-pad">
         <div className="page-shell contact-grid">
@@ -79,7 +67,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-[#051012]">
         <div className="page-shell">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl">

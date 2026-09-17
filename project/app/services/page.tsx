@@ -4,13 +4,14 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { services, images } from '@/lib/data';
-import { SectionLabel } from '@/components/Shared';
+import { SectionLabel, SubpageHero } from '@/components/Shared';
 
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
+    <main className="overflow-hidden">
+      <SubpageHero title="Premium upgrades." highlight="Seamlessly integrated." subtitle="Explore our range of curated energy solutions designed to lower bills and elevate your living spaces." image={images.solar} />
       <section id="services" className="services-section section-pad">
         <div className="page-shell">
           <div className="section-intro-row">
@@ -60,7 +61,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-[#051012]">
         <div className="page-shell">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>

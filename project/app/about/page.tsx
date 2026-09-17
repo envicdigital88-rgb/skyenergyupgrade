@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Check, CloudSun, ArrowUpRight } from 'lucide-react';
-import { SectionLabel, ArrowButton } from '@/components/Shared';
+import { SectionLabel, ArrowButton, SubpageHero } from '@/components/Shared';
 import { images } from '@/lib/data';
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
+    <main className="overflow-hidden">
+      <SubpageHero title="Our story &" highlight="the energy behind us." subtitle="We are on a mission to bring premium, expertly curated energy upgrades to Victoria, making the transition effortless." image={images.team} />
       <section id="about" className="about-section page-shell section-pad">
         <div className="about-visual">
           <Image src={images.home} alt="Solar panels on a contemporary Australian home" fill sizes="(max-width: 900px) 100vw, 50vw" />
@@ -53,7 +54,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-[#051012]">
         <div className="page-shell">
           <div className="grid md:grid-cols-2 gap-16 items-center flex-row-reverse">
             <div className="order-2 md:order-1 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">

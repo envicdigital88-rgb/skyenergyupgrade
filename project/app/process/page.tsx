@@ -1,5 +1,6 @@
 import { BatteryCharging, CircleHelp, Sparkles, Zap, ArrowUpRight } from 'lucide-react';
-import { SectionLabel } from '@/components/Shared';
+import { SectionLabel, SubpageHero } from '@/components/Shared';
+import { images } from '@/lib/data';
 
 export default function ProcessPage() {
   const processSteps = [
@@ -10,7 +11,8 @@ export default function ProcessPage() {
   ] as const;
 
   return (
-    <main className="overflow-hidden bg-[#f7f9f8] text-[#0b1719] pt-24">
+    <main className="overflow-hidden">
+      <SubpageHero title="Our process &" highlight="how we work." subtitle="A transparent, hassle-free journey from initial assessment to your final professional installation." image={images.blueprint} />
       <section id="process" className="process-section section-pad">
         <div className="page-shell">
           <div className="process-top">
@@ -34,7 +36,7 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-[#173537] text-white">
+      <section className="section-pad bg-[#051012] text-[#f0f6f6]">
         <div className="page-shell">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <SectionLabel light>Guaranteed Results</SectionLabel>
@@ -42,17 +44,17 @@ export default function ProcessPage() {
             <p className="text-gray-400 leading-relaxed text-lg">We stand behind our work. Every installation is backed by industry-leading warranties and our own satisfaction guarantee, ensuring you see the energy savings we projected.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="bg-[#102426] p-10 rounded-2xl">
+            <div className="bg-[#081618] border border-[#1e3639] p-10 rounded-2xl">
               <div className="text-4xl font-light text-lime-400 mb-4">10<span className="text-xl">yr</span></div>
               <h4 className="font-bold mb-2">Workmanship</h4>
               <p className="text-sm text-gray-400">Comprehensive warranty on all our installation work.</p>
             </div>
-            <div className="bg-[#102426] p-10 rounded-2xl">
+            <div className="bg-[#081618] border border-[#1e3639] p-10 rounded-2xl">
               <div className="text-4xl font-light text-sky-400 mb-4">100<span className="text-xl">%</span></div>
               <h4 className="font-bold mb-2">Certified</h4>
               <p className="text-sm text-gray-400">All components meet strict VEU and Australian standards.</p>
             </div>
-            <div className="bg-[#102426] p-10 rounded-2xl">
+            <div className="bg-[#081618] border border-[#1e3639] p-10 rounded-2xl">
               <div className="text-4xl font-light text-white mb-4">24<span className="text-xl">/7</span></div>
               <h4 className="font-bold mb-2">Support</h4>
               <p className="text-sm text-gray-400">Round-the-clock emergency support for critical systems.</p>
