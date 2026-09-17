@@ -99,58 +99,90 @@ export default function Home() {
             <span className="font-bold text-xl md:text-2xl text-[#f0f6f6] tracking-tighter">Master Electricians</span>
           </div>
         </div>
-      </section>
-
-      {/* Beautiful Featured Solutions Grid */}
-      <section id="solutions" className="section-pad">
-        <div className="page-shell">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="max-w-2xl">
-              <SectionLabel>Core Solutions</SectionLabel>
-              <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight">Powering a <span className="text-sky-600">smarter future.</span></h2>
-            </div>
-            <p className="text-[#8ca3a3] max-w-sm text-sm leading-relaxed">Discover our most popular energy upgrade pathways designed specifically for the Victorian climate and VEU requirements.</p>
-          </div>
+      </section>        {/* Beautiful Featured Solutions Grid */}
+        <section id="solutions" className="section-pad relative overflow-hidden">
+          {/* Subtle background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1fa0f9]/5 rounded-full blur-[120px] pointer-events-none" />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer">
-              <Image src={images.solar} alt="Solar" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="text-lime-400 text-xs font-bold tracking-widest uppercase mb-3 block">01 / Generation</span>
-                <h3 className="text-white text-3xl font-bold mb-2">Solar Systems</h3>
-                <p className="text-white/70 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Capture the sun's energy with high-efficiency tier-1 solar panels.</p>
+          <div className="page-shell relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+              <div className="max-w-2xl">
+                <SectionLabel>Core Solutions</SectionLabel>
+                <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">Powering a <span className="text-[#1fa0f9]">smarter<br/>future.</span></h2>
               </div>
+              <p className="text-[#8ca3a3] max-w-sm text-sm leading-relaxed">
+                Discover our most popular energy upgrade pathways designed specifically for the Victorian climate and VEU requirements.
+              </p>
             </div>
             
-            <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer">
-              <Image src={images.interior} alt="Lighting" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="text-sky-400 text-xs font-bold tracking-widest uppercase mb-3 block">02 / Efficiency</span>
-                <h3 className="text-white text-3xl font-bold mb-2">Smart Lighting</h3>
-                <p className="text-white/70 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Upgrade to intelligent LED solutions that dramatically cut your baseline energy draw.</p>
-              </div>
+            <div className="grid lg:grid-cols-12 gap-6">
+              
+              {/* Card 1: Solar */}
+              <a href="/services" className="group relative h-[450px] lg:col-span-7 rounded-3xl overflow-hidden shadow-2xl block">
+                <Image src={images.solar} alt="Solar Systems" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/30 to-transparent opacity-80" />
+                
+                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
+                  <div className="flex justify-between items-start md:items-center gap-4">
+                    <div>
+                      <div className="text-lime-400 text-xs font-bold tracking-widest uppercase mb-2">01 / Generation</div>
+                      <h3 className="text-3xl font-serif italic text-white mb-2">Solar Systems</h3>
+                      <p className="text-[#8ca3a3] text-sm max-w-sm h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Capture the sun\'s energy with premium tier-1 panels designed for maximum Victorian efficiency.</p>
+                    </div>
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                      <ArrowRight size={20} />
+                    </div>
+                  </div>
+                </div>
+              </a>
+              
+              {/* Card 2: Lighting */}
+              <a href="/services" className="group relative h-[450px] lg:col-span-5 rounded-3xl overflow-hidden shadow-2xl block">
+                <Image src={images.interior} alt="Smart Lighting" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/30 to-transparent opacity-80" />
+                
+                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
+                  <div className="flex justify-between items-start md:items-center gap-4">
+                    <div>
+                      <div className="text-[#1fa0f9] text-xs font-bold tracking-widest uppercase mb-2">02 / Efficiency</div>
+                      <h3 className="text-3xl font-serif italic text-white mb-2">Smart Lighting</h3>
+                      <p className="text-[#8ca3a3] text-sm max-w-sm h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Transform spaces with intelligent, energy-saving LED solutions that instantly lower bills.</p>
+                    </div>
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                      <ArrowRight size={20} />
+                    </div>
+                  </div>
+                </div>
+              </a>
+              
+              {/* Card 3: HVAC */}
+              <a href="/services" className="group relative h-[350px] lg:col-span-12 rounded-3xl overflow-hidden shadow-2xl block">
+                <Image src={images.technician} alt="HVAC Upgrades" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-[#051012]/20 to-transparent opacity-80" />
+                
+                <div className="absolute bottom-6 left-6 md:w-1/2 p-6 rounded-2xl bg-[#051012]/60 backdrop-blur-md border border-white/10 transform transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#051012]/80">
+                  <div className="flex justify-between items-start md:items-center gap-4">
+                    <div>
+                      <div className="text-white text-xs font-bold tracking-widest uppercase mb-2">03 / Climate</div>
+                      <h3 className="text-3xl font-serif italic text-white mb-2">HVAC Upgrades</h3>
+                      <p className="text-[#8ca3a3] text-sm max-w-md h-0 opacity-0 overflow-hidden group-hover:h-[40px] group-hover:opacity-100 group-hover:mt-2 transition-all duration-500">Engineered comfort. Upgrade to modern, high-efficiency climate control systems supported by VEU rebates.</p>
+                    </div>
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white text-[#051012] flex items-center justify-center transform -rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg">
+                      <ArrowRight size={20} />
+                    </div>
+                  </div>
+                </div>
+              </a>
+              
             </div>
             
-            <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer md:col-span-2 lg:col-span-1">
-              <Image src={images.technician} alt="HVAC" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="text-white text-xs font-bold tracking-widest uppercase mb-3 block">03 / Climate</span>
-                <h3 className="text-white text-3xl font-bold mb-2">HVAC Upgrades</h3>
-                <p className="text-white/70 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Modern heating and cooling systems designed for ultimate comfort and efficiency.</p>
-              </div>
+            <div className="mt-12 text-center">
+              <ArrowButton href="/services">View all services</ArrowButton>
             </div>
           </div>
-          
-          <div className="mt-12 text-center">
-            <ArrowButton href="/services">View all services</ArrowButton>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Strip */}
+        </section>
+  
+        {/* Value Strip */}
       <section className="bg-[#051012] text-white py-24">
         <div className="page-shell">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -178,80 +210,118 @@ export default function Home() {
       </section>
 
       {/* About Snippet */}
-      <section className="section-pad bg-white">
-        <div className="page-shell">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
-              <Image src={images.home} alt="About Skyenergy" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur px-8 py-6 rounded-2xl shadow-xl max-w-sm border border-white/20">
-                <span className="flex items-center gap-3 text-sky-600 font-bold tracking-widest uppercase text-xs mb-2">
-                  <span className="w-2 h-2 rounded-full bg-lime-400" /> Founded in Victoria
-                </span>
-                <p className="text-gray-800 font-semibold">Over a decade of engineering smarter, greener spaces for Australian families and businesses.</p>
-              </div>
-            </div>
-            <div>
-              <SectionLabel>Who we are</SectionLabel>
-              <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">Your partners in <span className="text-sky-600">efficiency.</span></h2>
-              <p className="text-[#8ca3a3] mb-6 text-lg leading-relaxed">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
-              <p className="text-[#8ca3a3] mb-10 leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
-              <div className="flex items-center gap-6">
-                <ArrowButton href="/about">Discover our story</ArrowButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-pad bg-[#051012] text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-        <div className="page-shell relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <SectionLabel light>Client Success</SectionLabel>
-            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">Don't just take our <span className="text-lime-400">word for it.</span></h2>
-          </div>
+        <section className="section-pad relative bg-[#051012] text-white overflow-hidden min-h-[700px] flex items-center border-y border-white/10">
+          {/* Video Background */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/images/about-video.mp4" type="video/mp4" />
+          </video>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-              <div className="flex text-lime-400 mb-6"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">"The entire process was seamless. The team handled all the VEU paperwork, and our new smart lighting system reduced our warehouse energy bill by 40% in the first quarter."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">SJ</div>
-                <div>
-                  <div className="font-bold">Sarah Jenkins</div>
-                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Logistics Manager</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-b from-sky-900/40 to-white/5 border border-sky-500/20 p-8 rounded-3xl transform md:-translate-y-4 hover:border-sky-500/40 transition-colors relative">
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-lime-400/20 blur-2xl rounded-full" />
-              <div className="flex text-lime-400 mb-6 relative"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
-              <p className="text-lg text-white font-medium mb-8 leading-relaxed relative">"Skyenergy Groups completely transformed our home. The solar installation was incredibly neat, and their engineers took the time to explain exactly how to maximize our savings."</p>
-              <div className="flex items-center gap-4 relative">
-                <div className="w-12 h-12 rounded-full bg-lime-900 flex items-center justify-center font-bold text-lime-200">MT</div>
-                <div>
-                  <div className="font-bold">Mark Thompson</div>
-                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Homeowner, VIC</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-              <div className="flex text-lime-400 mb-6"><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/><Sun size={20}/></div>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">"We were hesitant about the initial costs, but the ROI projection Skyenergy provided was spot on. The HVAC upgrade paid for itself through government rebates and monthly savings."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center font-bold text-sky-200">EL</div>
-                <div>
-                  <div className="font-bold">Elena Rodriguez</div>
-                  <div className="text-xs text-[#8ca3a3] uppercase tracking-wider">Retail Owner</div>
+          {/* Gradient Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#051012]/95 via-[#051012]/60 to-transparent w-full md:w-[65%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-transparent to-[#051012]" />
+  
+          <div className="page-shell relative z-10 w-full">
+            <div className="max-w-2xl">
+              <SectionLabel light>Who we are</SectionLabel>
+              <h2 className="text-5xl md:text-7xl font-bold mt-4 mb-6 tracking-tight text-[#f0f6f6]">Your partners in <br/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">efficiency.</em></h2>
+              
+              <p className="text-[#8ca3a3] mb-6 text-xl leading-relaxed font-medium">We don't just sell equipment. We are a collective of engineers, auditors, and certified installers dedicated to fundamentally improving how your property consumes energy.</p>
+              
+              <p className="text-[#8ca3a3] mb-10 text-lg leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
+              
+              <div className="flex flex-wrap items-center gap-8">
+                <ArrowButton light href="/about">Discover our story</ArrowButton>
+                <div className="flex items-center gap-3 text-white/80 font-bold tracking-widest uppercase text-xs">
+                  <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" /> Founded in Victoria
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      {/* Client Success / Testimonials */}
+        <section className="py-32 bg-[#051012] relative overflow-hidden border-t border-white/5">
+          {/* Ambient Glows */}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1fa0f9]/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-lime-400/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+          
+          <div className="page-shell relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+              <div className="max-w-3xl">
+                <SectionLabel>Client Success</SectionLabel>
+                <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">
+                  Don't just take our <br />
+                  <em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">word for it.</em>
+                </h2>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors cursor-pointer">
+                  <ArrowRight size={20} className="rotate-180" />
+                </div>
+                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors cursor-pointer">
+                  <ArrowRight size={20} />
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Card 1 */}
+              <div className="relative bg-[#0a171a]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-500 shadow-2xl group">
+                <div className="absolute top-8 right-8 text-[#1fa0f9]/20 font-serif text-8xl leading-none rotate-180 select-none group-hover:text-[#1fa0f9]/30 transition-colors">"</div>
+                <div className="flex gap-1 text-[#1fa0f9] mb-8 relative z-10"><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/></div>
+                <p className="text-lg text-[#8ca3a3] mb-12 leading-relaxed relative z-10 font-medium">
+                  "The entire process was seamless. The team handled all the VEU paperwork, and our new smart lighting system reduced our warehouse energy bill by 40% in the first quarter."
+                </p>
+                <div className="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10">
+                  <Image src={images.team} alt="Avatar" width={48} height={48} className="rounded-full object-cover w-12 h-12 grayscale group-hover:grayscale-0 transition-all" />
+                  <div>
+                    <div className="font-bold text-white">Sarah Jenkins</div>
+                    <div className="text-xs text-[#1fa0f9] uppercase tracking-wider font-semibold mt-1">Logistics Manager</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Card 2 */}
+              <div className="relative bg-gradient-to-b from-[#1fa0f9]/10 to-[#0a171a]/80 backdrop-blur-xl border border-[#1fa0f9]/30 p-8 md:p-10 rounded-[2rem] transform md:translate-y-8 hover:translate-y-4 transition-transform duration-500 shadow-2xl group overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#1fa0f9]/20 blur-[60px] rounded-full pointer-events-none" />
+                <div className="absolute top-8 right-8 text-[#1fa0f9]/20 font-serif text-8xl leading-none rotate-180 select-none group-hover:text-[#1fa0f9]/40 transition-colors">"</div>
+                <div className="flex gap-1 text-[#1fa0f9] mb-8 relative z-10"><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/></div>
+                <p className="text-lg text-white mb-12 leading-relaxed relative z-10 font-medium">
+                  "Skyenergy Groups completely transformed our home. The solar installation was incredibly neat, and their engineers took the time to explain exactly how to maximize our savings."
+                </p>
+                <div className="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10">
+                  <Image src={images.technician} alt="Avatar" width={48} height={48} className="rounded-full object-cover w-12 h-12 grayscale group-hover:grayscale-0 transition-all" />
+                  <div>
+                    <div className="font-bold text-white">Mark Thompson</div>
+                    <div className="text-xs text-lime-400 uppercase tracking-wider font-semibold mt-1">Homeowner, VIC</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Card 3 */}
+              <div className="relative bg-[#0a171a]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-500 shadow-2xl group">
+                <div className="absolute top-8 right-8 text-[#1fa0f9]/20 font-serif text-8xl leading-none rotate-180 select-none group-hover:text-[#1fa0f9]/30 transition-colors">"</div>
+                <div className="flex gap-1 text-[#1fa0f9] mb-8 relative z-10"><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/><Sun size={16}/></div>
+                <p className="text-lg text-[#8ca3a3] mb-12 leading-relaxed relative z-10 font-medium">
+                  "We were hesitant about the initial costs, but the ROI projection Skyenergy provided was spot on. The HVAC upgrade paid for itself through government rebates and monthly savings."
+                </p>
+                <div className="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10">
+                  <Image src={images.office} alt="Avatar" width={48} height={48} className="rounded-full object-cover w-12 h-12 grayscale group-hover:grayscale-0 transition-all" />
+                  <div>
+                    <div className="font-bold text-white">Elena Rodriguez</div>
+                    <div className="text-xs text-[#1fa0f9] uppercase tracking-wider font-semibold mt-1">Retail Owner</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* Featured Gallery */}
       <section className="py-24 bg-[#051012] border-y border-[#1e3639]">
