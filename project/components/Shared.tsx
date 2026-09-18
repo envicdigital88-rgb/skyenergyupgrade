@@ -53,12 +53,12 @@ export function SubpageHero({ title, highlight, subtitle, image }: { title: stri
       <div className="absolute inset-0 bg-gradient-to-b from-[#051012]/30 via-transparent to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#051012]/90 via-[#051012]/40 to-transparent w-full md:w-[70%]" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#1fa0f9]/10 blur-[120px] pointer-events-none" />
-      <div className="relative z-10 page-shell max-w-6xl mx-auto w-full">
+      <div className="relative z-10 page-shell max-w-6xl mx-auto w-full text-center md:text-left">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-[1.1] drop-shadow-2xl text-[#f0f6f6]">
           {title} <br className="hidden md:block" />
           <em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">{highlight}</em>
         </h1>
-        <p className="text-lg md:text-xl text-[#8ca3a3] max-w-2xl font-medium drop-shadow-md mt-6">
+        <p className="text-lg md:text-xl text-[#8ca3a3] max-w-2xl font-medium drop-shadow-md mt-6 mx-auto md:mx-0">
           {subtitle}
         </p>
       </div>

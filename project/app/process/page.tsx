@@ -16,11 +16,11 @@ export default function ProcessPage() {
       <section id="process" className="process-section section-pad">
         <div className="page-shell">
           <div className="process-top">
-            <div>
+            <div className="text-center md:text-left">
               <SectionLabel light>How it works</SectionLabel>
               <h2>A better way<br />to <span>begin.</span></h2>
             </div>
-            <p>Clear advice. Thoughtful upgrades. A process that respects your time, your property and your goals.</p>
+            <p className="text-center md:text-left">Clear advice. Thoughtful upgrades. A process that respects your time, your property and your goals.</p>
           </div>
           <div className="process-grid">
             {processSteps.map(([num, title, copy, Icon]) => (

@@ -15,7 +15,7 @@ export default function AboutPage() {
             <span><b>Built for better</b><small>Victoria & beyond</small></span>
           </div>
         </div>
-        <div className="about-copy">
+        <div className="about-copy text-center md:text-left">
           <SectionLabel>About Skyenergy Groups</SectionLabel>
           <h2>Smarter energy.<br /><span>Simpler upgrades.</span></h2>
           <p className="lead-copy">Skyenergy Groups helps Australian homes and small businesses improve their energy efficiency through the Victorian Energy Upgrades program.</p>
@@ -25,13 +25,13 @@ export default function AboutPage() {
               <li key={item}><span><Check size={14} /></span>{item}</li>
             ))}
           </ul>
-          <ArrowButton href="/services">Meet our approach</ArrowButton>
+          <div className="flex justify-center md:justify-start"><ArrowButton href="/services">Meet our approach</ArrowButton></div>
         </div>
       </section>
 
       <section className="why-section">
         <div className="page-shell why-grid">
-          <div>
+          <div className="text-center md:text-left">
             <SectionLabel light>Why Skyenergy Groups</SectionLabel>
             <h2>Good energy<br /><span>starts here.</span></h2>
             <p>We make the upgrade journey feel less technical, less overwhelming and more like a smart decision for what comes next.</p>
@@ -60,11 +60,11 @@ export default function AboutPage() {
             <div className="order-2 md:order-1 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image src={images.team} alt="Skyenergy Groups Team" fill className="object-cover" />
             </div>
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2 text-center md:text-left">
               <SectionLabel>Our People</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">Dedicated to your <span className="text-sky-600">success.</span></h2>
               <p className="text-gray-600 mb-6 leading-relaxed">Our team consists of certified electricians, energy auditors, and project managers who share a unified vision: making sustainable energy accessible to all Australians. We pride ourselves on transparent communication, technical excellence, and a customer-first approach that ensures your upgrade goes smoothly from start to finish.</p>
-              <ArrowButton href="/contact">Join our team</ArrowButton>
+              <div className="flex justify-center md:justify-start"><ArrowButton href="/contact">Join our team</ArrowButton></div>
             </div>
           </div>
         </div>

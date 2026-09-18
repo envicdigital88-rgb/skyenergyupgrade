@@ -10,11 +10,11 @@ export default function ProjectsPage() {
       <section id="projects" className="projects-section section-pad">
         <div className="page-shell">
           <div className="section-intro-row">
-            <div>
+            <div className="text-center md:text-left">
               <SectionLabel>Selected work</SectionLabel>
               <h2>Energy in<br /><span>action.</span></h2>
             </div>
-            <p>Thoughtful upgrades are about more than equipment. They are about making a home or business work better every day.</p>
+            <p className="text-center md:text-left">Thoughtful upgrades are about more than equipment. They are about making a home or business work better every day.</p>
           </div>
           <div className="project-grid">
             <ProjectCard image={images.solar} category="Solar fit" title="A brighter roofline" copy="20 solar panels installed on a family home." />
@@ -44,15 +44,16 @@ export default function ProjectsPage() {
 
       <section className="section-pad bg-[#051012]">
         <div className="page-shell">
-          <SectionLabel>Featured Case Study</SectionLabel>
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-12 tracking-tight">The Greenfield <span className="text-sky-600">Transformation.</span></h2>
-          
+          <div className="text-center md:text-left">
+            <SectionLabel>Featured Case Study</SectionLabel>
+            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-12 tracking-tight">The Greenfield <span className="text-sky-600">Transformation.</span></h2>
+          </div>
           <div className="relative h-[600px] w-full rounded-3xl overflow-hidden mb-12 shadow-2xl">
             <Image src={images.energy} alt="Greenfield Project" fill className="object-cover" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Challenge</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">A large manufacturing facility in Victoria was experiencing soaring energy costs due to outdated lighting systems and inefficient HVAC units. They needed a comprehensive overhaul that wouldn't disrupt their 24/7 operations.</p>
               
@@ -60,7 +61,7 @@ export default function ProjectsPage() {
               <p className="text-gray-600 leading-relaxed">We deployed a phased approach, replacing over 500 high-bay lights with intelligent LED fixtures during scheduled downtime. We also upgraded their core heating units and integrated a central energy management system to track usage in real-time.</p>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center md:text-left">
               <h4 className="font-bold text-lg mb-6 uppercase tracking-wider text-gray-500">Project Stats</h4>
               <div className="space-y-6">
                 <div>

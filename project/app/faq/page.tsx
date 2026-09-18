@@ -20,11 +20,11 @@ export default function FAQPage() {
       <SubpageHero title="Answers &" highlight="expert guidance." subtitle="Find answers to common questions about our energy efficiency solutions and the VEU rebate program." image={images.office} />
       <section id="veu" className="veu-section section-pad">
         <div className="page-shell veu-grid">
-          <div>
+          <div className="text-center md:text-left">
             <SectionLabel>Victorian Energy Upgrades</SectionLabel>
             <h2>Make your energy<br /><span>upgrade work harder.</span></h2>
             <p className="lead-copy">VEU is designed to help Victorian households and businesses improve energy efficiency. We help make the opportunity easier to understand.</p>
-            <ArrowButton href="/contact">Find out if you qualify</ArrowButton>
+            <div className="flex justify-center md:justify-start"><ArrowButton href="/contact">Find out if you qualify</ArrowButton></div>
           </div>
           <div className="faq-stack">
             {veuFaqs.map(([question, answer], index) => (
@@ -42,11 +42,11 @@ export default function FAQPage() {
 
       <section id="faq" className="faq-section section-pad">
         <div className="page-shell faq-grid">
-          <div>
+          <div className="text-center md:text-left">
             <SectionLabel>Questions, answered</SectionLabel>
             <h2>Let&apos;s clear<br /><span>things up.</span></h2>
             <p>Not sure where to start? These are some of the questions we hear most often.</p>
-            <a href="/contact" className="text-link">Ask our team directly <ArrowRight size={17} /></a>
+            <div className="flex justify-center md:justify-start"><a href="/contact" className="text-link">Ask our team directly <ArrowRight size={17} /></a></div>
           </div>
           <div className="faq-list">
             {faqs.map(([question, answer], index) => (
@@ -65,7 +65,7 @@ export default function FAQPage() {
       <section className="section-pad bg-[#051012] text-[#f0f6f6]">
         <div className="page-shell">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="text-center md:text-left">
               <SectionLabel light>Expert Support</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">Still have <span className="text-lime-400">questions?</span></h2>
               <p className="text-gray-400 mb-8 leading-relaxed">Energy upgrades can be complex, and we want you to feel completely confident in your decisions. Our support team is ready to provide detailed technical answers and guide you through the available rebates.</p>
@@ -80,7 +80,7 @@ export default function FAQPage() {
                   <p className="text-sm text-gray-400">Get clarity on VEU rebates, ROI calculations, and financing options.</p>
                 </div>
               </div>
-              <ArrowButton light href="/contact">Get in touch</ArrowButton>
+              <div className="flex justify-center md:justify-start"><ArrowButton light href="/contact">Get in touch</ArrowButton></div>
             </div>
             <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image src={images.tools} alt="Technical Support" fill className="object-cover" />

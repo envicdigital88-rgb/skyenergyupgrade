@@ -46,22 +46,22 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0" />
         <div className="hero-grid" />
         <div className="hero-content page-shell">
-          <div className="max-w-4xl relative z-10">
+          <div className="max-w-4xl relative z-10 text-center md:text-left">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-5 leading-[1.1] drop-shadow-2xl">Elevate your energy.<br /><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">Brilliantly designed.</em></h1>
-            <p className="hero-copy text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed drop-shadow-md font-medium">Experience a curated approach to energy efficiency. We seamlessly integrate premium VEU solutions to lower bills and elevate your living space.</p>
-            <div className="flex flex-wrap items-center gap-6">
+            <p className="hero-copy text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed drop-shadow-md font-medium mx-auto md:mx-0">Experience a curated approach to energy efficiency. We seamlessly integrate premium VEU solutions to lower bills and elevate your living space.</p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-6">
               <ArrowButton light href="/contact">Start your upgrade</ArrowButton>
               <a href="/services" className="text-link-light text-white hover:text-lime-400 transition-colors">Explore our solutions <ArrowRight size={17} /></a>
             </div>
           </div>
           
           <div className="hero-bottom mt-10">
-            <div className="flex items-center gap-8">
-              <div className="text-white/60">
+            <div className="flex items-center justify-center md:justify-start gap-8">
+              <div className="text-white/60 text-center md:text-left">
                 <div className="text-3xl font-bold text-white mb-1">10k+</div>
                 <div className="text-xs uppercase tracking-widest">Installations</div>
               </div>
-              <div className="text-white/60">
+              <div className="text-white/60 text-center md:text-left">
                 <div className="text-3xl font-bold text-white mb-1">4.9/5</div>
                 <div className="text-xs uppercase tracking-widest">Customer Rating</div>
               </div>
@@ -116,12 +116,12 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1fa0f9]/5 rounded-full blur-[120px] pointer-events-none" />
           
           <div className="page-shell relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-              <div className="max-w-2xl">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
+              <div className="max-w-2xl text-center md:text-left">
                 <SectionLabel>Core Solutions</SectionLabel>
                 <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">Powering a <span className="text-[#1fa0f9]">smarter<br/>future.</span></h2>
               </div>
-              <p className="text-[#8ca3a3] max-w-sm text-sm leading-relaxed">
+              <p className="text-[#8ca3a3] max-w-sm text-sm leading-relaxed text-center md:text-left">
                 Discover our most popular energy upgrade pathways designed specifically for the Victorian climate and VEU requirements.
               </p>
             </div>
@@ -258,7 +258,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#051012] via-transparent to-[#051012]" />
   
           <div className="page-shell relative z-10 w-full">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl text-center md:text-left">
               <SectionLabel light>Who we are</SectionLabel>
               <h2 className="text-4xl md:text-7xl font-bold mt-4 mb-6 tracking-tight text-[#f0f6f6] pr-4 md:pr-0">Your partners in <br className="hidden md:block"/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">efficiency.</em></h2>
               
@@ -266,7 +266,7 @@ export default function Home() {
               
               <p className="text-[#8ca3a3] mb-10 text-base md:text-lg leading-relaxed">By leveraging the Victorian Energy Upgrades (VEU) program, we've successfully slashed the carbon footprint and operating costs of thousands of properties, making the transition to green energy frictionless and financially brilliant.</p>
               
-              <div className="flex flex-wrap items-center gap-8">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-8">
                 <ArrowButton light href="/about">Discover our story</ArrowButton>
                 <div className="flex items-center gap-3 text-white/80 font-bold tracking-widest uppercase text-xs">
                   <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" /> Founded in Victoria
@@ -283,8 +283,8 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-lime-400/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
           
           <div className="page-shell relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
-              <div className="max-w-3xl">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8">
+              <div className="max-w-3xl text-center md:text-left">
                 <SectionLabel>Client Success</SectionLabel>
                 <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">
                   Don't just take our <br />
@@ -357,8 +357,8 @@ export default function Home() {
       {/* Cinematic Featured Gallery */}
       <section className="py-24 md:py-32 bg-[#051012] relative overflow-hidden border-t border-white/5">
         <div className="page-shell relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
-            <div className="max-w-2xl">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-8">
+            <div className="max-w-2xl text-center md:text-left">
               <SectionLabel>Inspiration</SectionLabel>
               <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">
                 Curated <br className="hidden md:block"/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">spaces.</em>

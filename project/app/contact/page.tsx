@@ -20,11 +20,11 @@ export default function ContactPage() {
 
       <section id="contact" className="contact-section section-pad">
         <div className="page-shell contact-grid">
-          <div className="contact-copy">
+          <div className="contact-copy text-center md:text-left">
             <SectionLabel>Let&apos;s talk</SectionLabel>
             <h2>Make your energy<br /><span>upgrade simple.</span></h2>
             <p>Tell us what you are thinking about. Whether you have a clear plan or just a few questions, we&apos;ll help you find the right next step.</p>
-            <div className="contact-details">
+            <div className="contact-details flex flex-col items-center md:items-start">
               <a href="mailto:info@skyenergygroups.com"><Mail size={17} />info@skyenergygroups.com</a>
               <a href="tel:+61391234567"><Phone size={17} />+61 3 9123 4567</a>
               <span><CloudSun size={17} />Mon – Fri / 9:00 AM – 5:00 PM</span>
@@ -73,7 +73,7 @@ export default function ContactPage() {
             <div className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image src={images.office} alt="Our Melbourne Office" fill className="object-cover" />
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <SectionLabel>Our Headquarters</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">Visit us in <span className="text-sky-600">Melbourne.</span></h2>
               <p className="text-gray-600 mb-8 leading-relaxed">Our headquarters is the hub of our operations. It's where our engineering team designs bespoke energy systems and our support team ensures your upgrades continue to perform optimally for years to come.</p>
