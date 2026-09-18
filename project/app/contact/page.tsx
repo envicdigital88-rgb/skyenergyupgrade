@@ -29,6 +29,19 @@ export default function ContactPage() {
               <a href="tel:+61391234567"><Phone size={17} />+61 3 9123 4567</a>
               <span><CloudSun size={17} />Mon – Fri / 9:00 AM – 5:00 PM</span>
             </div>
+
+            {/* Skyenergy Groups HQ Card */}
+            <div className="mt-8 p-6 rounded-2xl bg-[#081618] border border-[#1e3639] text-left w-full max-w-sm mx-auto md:mx-0">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+                <h4 className="font-bold text-white text-sm tracking-wide uppercase">Skyenergy Groups HQ</h4>
+              </div>
+              <p className="text-[#8ca3a3] text-sm leading-relaxed">
+                123 Innovation Drive<br />
+                Melbourne, VIC 3000<br />
+                Australia
+              </p>
+            </div>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
             {formSent ? (
@@ -75,12 +88,15 @@ export default function ContactPage() {
             </div>
             <div className="text-center md:text-left">
               <SectionLabel>Our Headquarters</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">Visit us in <span className="text-sky-600">Melbourne.</span></h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">Our headquarters is the hub of our operations. It's where our engineering team designs bespoke energy systems and our support team ensures your upgrades continue to perform optimally for years to come.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight text-white">Visit us in <span className="text-[#1fa0f9]">Melbourne.</span></h2>
+              <p className="text-[#8ca3a3] mb-8 leading-relaxed">Our headquarters is the hub of our operations. It's where our engineering team designs bespoke energy systems and our support team ensures your upgrades continue to perform optimally for years to come.</p>
               
-              <div className="bg-gray-50 p-6 rounded-xl inline-block">
-                <h4 className="font-bold mb-2">Skyenergy Groups HQ</h4>
-                <p className="text-gray-600 text-sm">123 Innovation Drive<br />Melbourne, VIC 3000<br />Australia</p>
+              <div className="bg-[#081618] border border-[#1e3639] p-6 rounded-2xl inline-block text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+                  <h4 className="font-bold text-white text-base">Skyenergy Groups HQ</h4>
+                </div>
+                <p className="text-[#8ca3a3] text-sm leading-relaxed">123 Innovation Drive<br />Melbourne, VIC 3000<br />Australia</p>
               </div>
             </div>
           </div>
