@@ -19,6 +19,17 @@ import { images } from '@/lib/data';
 
 export default function Home() {
   const [eligibility, setEligibility] = useState({ location: '', type: '', upgrade: '' });
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [calculationResult, setCalculationResult] = useState<null | { eligible: boolean, amount: number }>(null);
+
+  const handleCalculate = () => {
+    setIsCalculating(true);
+    setCalculationResult(null);
+    setTimeout(() => {
+      setIsCalculating(false);
+      setCalculationResult({ eligible: true, amount: Math.floor(Math.random() * 4000) + 1500 });
+    }, 1200);
+  };
 
   return (
     <main className="overflow-hidden">
@@ -202,33 +213,33 @@ export default function Home() {
         </section>
   
         {/* Value Strip */}
-      <section className="bg-[#051012] text-white py-24">
-        <div className="page-shell">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-6">The Skyenergy Advantage</h2>
-            <p className="text-[#8ca3a3]">We do more than install equipment; we engineer long-term energy resilience.</p>
+        <section className="bg-[#051012] text-white py-24">
+          <div className="page-shell">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-4xl font-bold mb-6">The Skyenergy Advantage</h2>
+              <p className="text-[#8ca3a3]">We do more than install equipment; we engineer long-term energy resilience.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <ShieldCheck size={40} className="text-lime-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4">Certified Experts</h3>
+                <p className="text-[#8ca3a3] text-sm leading-relaxed">Our technicians are rigorously trained and certified to meet the highest safety and performance standards in Victoria.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <TrendingDown size={40} className="text-sky-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4">Maximum ROI</h3>
+                <p className="text-[#8ca3a3] text-sm leading-relaxed">We specialize in finding the perfect intersection of VEU rebates and energy savings to ensure your investment pays off rapidly.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <Award size={40} className="text-white mb-6" />
+                <h3 className="text-2xl font-bold mb-4">Premium Quality</h3>
+                <p className="text-[#8ca3a3] text-sm leading-relaxed">We exclusively source tier-1 components that are built to withstand harsh Australian conditions for decades.</p>
+              </div>
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
-            <div>
-              <ShieldCheck size={40} className="text-lime-400 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Certified Experts</h3>
-              <p className="text-[#8ca3a3] text-sm leading-relaxed">Our technicians are rigorously trained and certified to meet the highest safety and performance standards in Victoria.</p>
-            </div>
-            <div>
-              <TrendingDown size={40} className="text-sky-400 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Maximum ROI</h3>
-              <p className="text-[#8ca3a3] text-sm leading-relaxed">We specialize in finding the perfect intersection of VEU rebates and energy savings to ensure your investment pays off rapidly.</p>
-            </div>
-            <div>
-              <Award size={40} className="text-white mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Premium Quality</h3>
-              <p className="text-[#8ca3a3] text-sm leading-relaxed">We exclusively source tier-1 components that are built to withstand harsh Australian conditions for decades.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Snippet */}
+        </section>
+  
+        {/* About Snippet */}
         <section className="section-pad relative bg-[#051012] text-white overflow-hidden min-h-[700px] flex items-center border-y border-white/10">
           {/* Video Background */}
           <video 
@@ -343,96 +354,232 @@ export default function Home() {
           </div>
         </section>
 
-      {/* Featured Gallery */}
-      <section className="py-24 bg-[#051012] border-y border-[#1e3639]">
-        <div className="page-shell">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      {/* Cinematic Featured Gallery */}
+      <section className="py-24 md:py-32 bg-[#051012] relative overflow-hidden border-t border-white/5">
+        <div className="page-shell relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
             <div className="max-w-2xl">
               <SectionLabel>Inspiration</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-bold mt-4 tracking-tight text-[#f0f6f6]">Curated <span className="text-[#1fa0f9]">spaces.</span></h2>
+              <h2 className="text-5xl md:text-7xl font-bold mt-4 tracking-tight text-[#f0f6f6]">
+                Curated <br className="hidden md:block"/><em className="text-[#1fa0f9] font-serif italic font-light tracking-normal">spaces.</em>
+              </h2>
             </div>
-            <a href="/projects" className="text-link hover:text-white transition-colors flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-[#8ca3a3]">
-              View all projects <ArrowRight size={17} />
+            <a href="/projects" className="group flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-[#8ca3a3] hover:text-white transition-colors mb-4 md:mb-0">
+              View all projects 
+              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#1fa0f9] group-hover:border-[#1fa0f9] group-hover:text-[#051012] transition-all shadow-lg">
+                <ArrowRight size={18} />
+              </div>
             </a>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div className="col-span-2 md:col-span-2 row-span-2 relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom1} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+          {/* Perfect Bento Image Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 h-auto md:h-[900px]">
+            
+            {/* Image 1: Massive featured (Left) */}
+            <div className="relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden group shadow-2xl h-[400px] md:h-auto border border-white/10">
+              <Image src={images.custom1} alt="Curated Space 1" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-            <div className="relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom2} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 2: Small top mid */}
+            <div className="relative md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden group shadow-lg h-[250px] md:h-auto border border-white/10">
+              <Image src={images.custom2} alt="Curated Space 2" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-            <div className="relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom3} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 3: Small top right */}
+            <div className="relative md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden group shadow-lg h-[250px] md:h-auto border border-white/10">
+              <Image src={images.custom3} alt="Curated Space 3" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-            <div className="col-span-2 relative h-[192px] md:h-[288px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom4} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 4: Wide mid right */}
+            <div className="relative md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden group shadow-xl h-[300px] md:h-auto border border-white/10">
+              <Image src={images.custom4} alt="Curated Space 4" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-          </div>
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6">
-             <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom5} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 5: Small bottom left */}
+            <div className="relative md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden group shadow-lg h-[250px] md:h-auto border border-white/10">
+              <Image src={images.custom5} alt="Curated Space 5" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-            <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom6} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 6: Small bottom mid */}
+            <div className="relative md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden group shadow-lg h-[250px] md:h-auto border border-white/10">
+              <Image src={images.custom6} alt="Curated Space 6" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
-            <div className="relative h-[250px] md:h-[350px] rounded-3xl overflow-hidden group">
-              <Image src={images.custom7} alt="Gallery image" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+
+            {/* Image 7: Wide bottom right */}
+            <div className="relative md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden group shadow-xl h-[300px] md:h-auto border border-white/10">
+              <Image src={images.custom7} alt="Curated Space 7" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#1fa0f9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
+            
           </div>
         </div>
       </section>
 
       {/* Interactive Eligibility Checker */}
       <section className="eligibility-section section-pad relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-[#1fa0f9]/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10" />
-        <div className="page-shell eligibility-card border border-[#1e3639] rounded-[40px]">
-          <div className="eligibility-copy pr-10">
-            <SectionLabel>Instant Quote</SectionLabel>
-            <h2 className="text-5xl md:text-6xl font-bold mt-6 mb-6">Check your <span className="text-lime-600">eligibility.</span></h2>
-            <p className="text-[#8ca3a3] mb-10 text-lg">See if your property qualifies for thousands of dollars in VEU government rebates. It takes less than 60 seconds.</p>
-            <div className="eligibility-mark bg-[#051012] inline-flex px-6 py-3 rounded-full border border-[#1e3639]">
-              <span className="font-bold text-[#f0f6f6]">VEU</span>
-              <span className="mark-line mx-4 bg-[#1e3639] w-12" />
-              <span className="font-bold text-[#f0f6f6]">VICTORIA</span>
+        {/* Background glow effects */}
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-lime-400/5 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1fa0f9]/8 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-lime-400/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4" />
+        </div>
+        <div className="page-shell flex flex-col items-center text-center">
+          {/* Hero-style heading */}
+          <div className="mb-10 w-full max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-lime-400 text-xs font-bold tracking-[0.2em] uppercase mb-6 bg-lime-400/10 border border-lime-400/20 px-4 py-2 rounded-full">
+              <span className="w-1.5 h-1.5 bg-lime-400 rounded-full animate-pulse" />
+              Instant Quote
+            </div>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.92] tracking-tight text-white mb-6">
+              Check your<br />
+              <span className="text-lime-400 relative">
+                eligibility.
+                <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-lime-400/0 via-lime-400 to-lime-400/0 rounded-full" />
+              </span>
+            </h2>
+            <p className="text-[#8ca3a3] text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              See if your property qualifies for thousands of dollars in VEU government rebates. It takes less than 60 seconds.
+            </p>
+            {/* VEU badge */}
+            <div className="mt-8 inline-flex items-center gap-3 bg-[#081618] border border-[#1e3639] px-5 py-2.5 rounded-full">
+              <span className="font-bold text-[#f0f6f6] text-sm tracking-wider">VEU</span>
+              <span className="w-10 h-px bg-[#1e3639]" />
+              <span className="font-bold text-[#f0f6f6] text-sm tracking-wider">VICTORIA</span>
             </div>
           </div>
-          <div className="eligibility-form bg-[#081618] p-8 rounded-3xl shadow-xl border border-[#1e3639]">
-            <div className="question-block">
-              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">Are you located in Victoria?</label>
-              <div className="choice-row">
-                {['Yes', 'No'].map(value => (
-                  <button key={value} className={`flex-1 py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.location === value ? 'bg-[#1fa0f9] text-[#051012] border-[#1fa0f9] shadow-lg scale-[1.02]' : 'border-[#1e3639] text-[#8ca3a3] hover:border-white/20 hover:text-white bg-[#051012]'}`} onClick={() => setEligibility({ ...eligibility, location: value })}>{value}</button>
-                ))}
+
+          {/* Form card */}
+          <div className="w-full max-w-lg">
+            {!calculationResult ? (
+              <div className="bg-[#081618] border border-[#1e3639] rounded-3xl p-6 sm:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] flex flex-col gap-6">
+                {/* Step 1 */}
+                <div className="flex flex-col gap-3 text-left">
+                  <label className="flex items-center gap-2 text-xs font-bold text-[#8ca3a3] tracking-[0.15em] uppercase">
+                    <span className="w-5 h-5 bg-lime-400/15 border border-lime-400/30 rounded-full flex items-center justify-center text-lime-400 text-[10px] font-bold flex-shrink-0">1</span>
+                    Are you located in Victoria?
+                  </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Yes', 'No'].map(value => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={(e) => { e.preventDefault(); setEligibility({ ...eligibility, location: value }); }}
+                        className={`py-4 text-center border rounded-2xl transition-all duration-200 font-semibold text-sm ${
+                          eligibility.location === value
+                            ? 'bg-lime-400 text-[#051012] border-lime-400 shadow-[0_0_25px_rgba(163,230,53,0.35)] scale-[1.02]'
+                            : 'border-[#1e3639] text-[#8ca3a3] hover:border-lime-400/30 hover:text-white hover:bg-lime-400/5 bg-[#051012]'
+                        }`}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex flex-col gap-3 text-left">
+                  <label className="flex items-center gap-2 text-xs font-bold text-[#8ca3a3] tracking-[0.15em] uppercase">
+                    <span className="w-5 h-5 bg-lime-400/15 border border-lime-400/30 rounded-full flex items-center justify-center text-lime-400 text-[10px] font-bold flex-shrink-0">2</span>
+                    What best describes you?
+                  </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Homeowner', 'Tenant', 'Small business', 'Commercial'].map(value => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={(e) => { e.preventDefault(); setEligibility({ ...eligibility, type: value }); }}
+                        className={`py-4 text-center border rounded-2xl transition-all duration-200 font-semibold text-sm ${
+                          eligibility.type === value
+                            ? 'bg-lime-400 text-[#051012] border-lime-400 shadow-[0_0_25px_rgba(163,230,53,0.35)] scale-[1.02]'
+                            : 'border-[#1e3639] text-[#8ca3a3] hover:border-lime-400/30 hover:text-white hover:bg-lime-400/5 bg-[#051012]'
+                        }`}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex flex-col gap-3 text-left">
+                  <label className="flex items-center gap-2 text-xs font-bold text-[#8ca3a3] tracking-[0.15em] uppercase">
+                    <span className="w-5 h-5 bg-lime-400/15 border border-lime-400/30 rounded-full flex items-center justify-center text-lime-400 text-[10px] font-bold flex-shrink-0">3</span>
+                    What are you interested in?
+                  </label>
+                  <div className="relative">
+                    <select
+                      className="w-full py-4 px-5 bg-[#051012] border border-[#1e3639] rounded-2xl font-semibold text-[#f0f6f6] appearance-none focus:outline-none focus:ring-2 focus:ring-lime-400/40 focus:border-lime-400/40 transition-all text-sm"
+                      value={eligibility.upgrade}
+                      onChange={e => setEligibility({ ...eligibility, upgrade: e.target.value })}
+                    >
+                      <option value="">Select an upgrade area</option>
+                      <option>Lighting</option>
+                      <option>Heating &amp; Cooling</option>
+                      <option>Solar / Energy Systems</option>
+                      <option>Energy Audit</option>
+                      <option>Not sure yet</option>
+                    </select>
+                    <ChevronDown size={18} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#8ca3a3] pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <button
+                  onClick={handleCalculate}
+                  disabled={isCalculating || !eligibility.location || !eligibility.type}
+                  className="w-full py-5 bg-lime-400 hover:bg-lime-300 disabled:bg-[#1e3639] disabled:cursor-not-allowed disabled:text-[#8ca3a3] text-[#051012] font-bold uppercase tracking-widest text-xs rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_15px_50px_-10px_rgba(163,230,53,0.5)] hover:shadow-[0_20px_60px_-10px_rgba(163,230,53,0.7)] disabled:shadow-none active:scale-[0.98]"
+                >
+                  {isCalculating ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="animate-spin h-4 w-4 text-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Calculating...
+                    </span>
+                  ) : (
+                    <>Calculate Rebates <ArrowRight size={16} /></>
+                  )}
+                </button>
+
+                {/* Trust line */}
+                <p className="text-center text-[10px] text-[#8ca3a3] tracking-wider uppercase">
+                  🔒 &nbsp;No personal data required · Takes under 60 seconds
+                </p>
               </div>
-            </div>
-            <div className="question-block">
-              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">What best describes you?</label>
-              <div className="choice-row choice-wrap grid grid-cols-2 gap-3">
-                {['Homeowner', 'Tenant', 'Small business', 'Commercial'].map(value => (
-                  <button key={value} className={`py-4 text-center border rounded-xl transition-all font-semibold ${eligibility.type === value ? 'bg-[#1fa0f9] text-[#051012] border-[#1fa0f9] shadow-lg scale-[1.02]' : 'border-[#1e3639] text-[#8ca3a3] hover:border-white/20 hover:text-white bg-[#051012]'}`} onClick={() => setEligibility({ ...eligibility, type: value })}>{value}</button>
-                ))}
+            ) : (
+              <div className="w-full bg-[#051012] border border-lime-400/30 rounded-3xl p-8 sm:p-12 text-center shadow-[0_0_60px_rgba(163,230,53,0.12)] flex flex-col items-center justify-center gap-6 animate-in fade-in zoom-in duration-500">
+                <div className="w-24 h-24 bg-lime-400/15 rounded-full flex items-center justify-center ring-1 ring-lime-400/30 shadow-[0_0_40px_rgba(163,230,53,0.2)]">
+                  <Award size={44} className="text-lime-400" />
+                </div>
+                <div>
+                  <div className="text-lime-400 font-extrabold text-3xl mb-2">Great news!</div>
+                  <p className="text-[#8ca3a3] text-sm">Based on your answers, you may be eligible for up to</p>
+                </div>
+                <div className="text-lime-400 font-extrabold text-6xl sm:text-7xl leading-none">
+                  ${calculationResult.amount.toLocaleString()}
+                </div>
+                <p className="text-xs text-[#8ca3a3] uppercase tracking-widest">in VEU government rebates</p>
+                <button
+                  onClick={() => { setCalculationResult(null); setEligibility({ location: '', type: '', upgrade: '' }); }}
+                  className="w-full max-w-xs py-4 bg-lime-400 hover:bg-lime-300 text-[#051012] font-bold uppercase tracking-widest text-xs rounded-2xl transition-all duration-200 shadow-[0_10px_40px_-10px_rgba(163,230,53,0.5)] active:scale-[0.98]"
+                >
+                  Claim your rebate now
+                </button>
+                <button
+                  onClick={() => { setCalculationResult(null); setEligibility({ location: '', type: '', upgrade: '' }); }}
+                  className="text-[#8ca3a3] hover:text-white text-xs underline underline-offset-4 transition-colors"
+                >
+                  Start over
+                </button>
               </div>
-            </div>
-            <div className="question-block">
-              <label className="text-xs font-bold text-[#8ca3a3] tracking-wider">What are you interested in?</label>
-              <div className="select-wrap relative">
-                <select className="w-full py-4 px-5 bg-[#051012] border border-[#1e3639] rounded-xl font-semibold text-[#f0f6f6] appearance-none focus:outline-none focus:ring-2 focus:ring-sky-500" value={eligibility.upgrade} onChange={e => setEligibility({ ...eligibility, upgrade: e.target.value })}>
-                  <option value="">Select an upgrade area</option>
-                  <option>Lighting</option>
-                  <option>Heating & Cooling</option>
-                  <option>Solar / Energy Systems</option>
-                  <option>Energy Audit</option>
-                  <option>Not sure yet</option>
-                </select>
-                <ChevronDown size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#8ca3a3] pointer-events-none" />
-              </div>
-            </div>
-            <button className="w-full mt-4 py-5 bg-lime-400 hover:bg-lime-500 text-[#051012] font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
-              Calculate Rebates <ArrowRight size={16} />
-            </button>
+            )}
           </div>
         </div>
       </section>
